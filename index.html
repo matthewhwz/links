@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="robots" content="noindex">
+        <meta name="googlebot" content="noindex">
+        <title>Links</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Product+Sans:400,400i,700,700i" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/earlyaccess/notosansscsliced.css" rel="stylesheet" type="text/css">
+        <link rel="icon" href="img/p1.ico" type="image/icon"/>
+        <link rel="stylesheet" href="css/style.css">
+        <script>
+            function decrypt(str, pwd) {
+            var prand ='';
+            for(var i=0; i<pwd.length; i++) {
+            prand += pwd.charCodeAt(i).toString();
+            }
+            var sPos = Math.floor(prand.length / 5);
+            var mult = parseInt(prand.charAt(sPos) + prand.charAt(sPos*2) + prand.charAt(sPos*3) + prand.charAt(sPos*4) + prand.charAt(sPos*5));
+            var incr = Math.round(pwd.length / 2);
+            var modu = Math.pow(2, 31) - 1;
+            var salt = parseInt(str.substring(str.length - 8, str.length), 16);
+            str = str.substring(0, str.length - 8);
+            prand += salt;
+            while(prand.length > 10) {
+            prand = (parseInt(prand.substring(0, 10)) + parseInt(prand.substring(10, prand.length))).toString();
+            }
+            prand = (mult * prand + incr) % modu;
+            var enc_chr = '';
+            var enc_str = '';
+            for(var i=0; i<str.length; i+=2) {
+            enc_chr = parseInt(parseInt(str.substring(i, i+2), 16) ^ Math.floor((prand / modu) * 255));
+            enc_str += String.fromCharCode(enc_chr);
+            prand = (mult * prand + incr) % modu;
+            }
+            return enc_str;
+            }
+            function protection() {
+            encURL = '7d7fd8b04d6752c9e3bfa21ab27e67e526c8026c938f';
+            password=prompt('請輸入密碼：','');
+            if (password != '' && password != null) {
+            decURL=decrypt(encURL, password);
+            location.href= decURL;
+            }
+            }
+        </script> 
+   
+    </head>
+
+    <body>
+        <br>
+        <div class="c1">
+            <img src="img/p1.jpg" alt="Rrofile picture">
+        </div>
+        <div class="name">
+            <h1>Matthew.Hwz</h1>
+        </div>
+
+        <h3>2021</h3>
+        <a class="gallery" href="https://photos.app.goo.gl/zmK7TiDpDTrrc7vc8" target="_blank">3D Daily~~</a>
+        <a class="gallery" href="https://photos.app.goo.gl/fLuZHrxqc6CK19d56" target="_blank">21/10/2021 智勇舞臺</a>
+        <a class="gallery" href="https://photos.app.goo.gl/hTAAc1UW2LXiW6K67" target="_blank">26/10/2021 香港科學館</a>
+        <a class="gallery" href="https://photos.app.goo.gl/JEV2qUh13W1S7CW29" target="_blank">26/11/2021 高山劇場</a>
+        <a class="gallery" href="https://photos.app.goo.gl/kYWLT5L6sgnyBuLE8" target="_blank">日的起與落——2021</a>
+        <a class="gallery" href="https://photos.app.goo.gl/4vxufh9ny49ndHsq7" target="_blank">Canon EOS M</a>
+
+        <h3>2022</h3>
+        <a class="gallery" href="" target="_blank">19-1-2022 Disney land</a>
+
+        <h3>Resources</h3>
+        <a class="Resources" onclick="protection()">Dse pp (CE+AL+DSE)</a>
+
+        <h3>Follow Me On</h3>
+
+        <div class="channels">
+            <a href="https://t.me/Matthew_Hwz" target="_blank">Telegram</a>
+            <a href="https://www.youtube.com/channel/UCDr0eHQU_sVSlRbouH5jSxw" target="_blank">YouTube</a>
+            <a href="https://www.instagram.com/matthew.hwz/" target="_blank">Instagram</a>
+        </div>
+
+        <div class="cc">
+            <p>&copy; 2022 Matthew.hwz</p>
+            <p>Coded and hosted in Hong Kong.</p>
+            <img src="https://counter2.stat.ovh/private/freecounterstat.php?c=7xst8wrx2nw6s7t3mfynpp8mb5ajzcaw"></td>               
+        </div>
+
+    </body>
+</html>

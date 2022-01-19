@@ -1,0 +1,185 @@
+html{
+    box-sizing:border-box;
+    font-size:100%;
+}
+
+*,:after,:before{
+    box-sizing:inherit;
+}
+
+body{
+    background-color:#060042;
+    background-image:linear-gradient(125deg, #6a89cc,#b8e994);
+    color:#fff;
+    min-height:100vh;
+    text-align:center;
+    font-family:Roboto,sans-serif,"montserrat";
+}
+
+a{
+    display:block;
+    max-width:400px;
+    margin:0 auto 15px;
+    padding:15px 20px;
+    font-size:.9rem;
+    color:#fff;
+    border:2px solid #fff;
+    text-decoration:none;
+    transition:all .2s ease-in-out;
+    font-weight:700;
+}
+
+a.gallery:hover,a:hover{
+    background-color:#6a89cc;
+    color:#fff;
+}
+
+a.gallery{
+    position:relative;
+    background-color:#fff;
+    color:#060042;
+}
+
+a.gallery:before{
+    content:"";
+    position:absolute;
+    top:2px;left:2px;
+    width:calc(100% - 4px);
+    height:calc(100% - 4px);
+    border:2px solid #6a89cc;
+}
+
+h3{
+    font-size:20px;
+    text-transform:uppercase;
+    font-weight:400;
+    letter-spacing:2px;
+    line-height: 10px;
+    text-decoration:underline;
+}
+
+.channels{
+    display:flex;
+    max-width:400px;
+    margin:0 auto;
+
+}
+
+.channels a{
+    flex:1;
+    padding:5px 10px;
+    margin-right:10px;
+    background-color:#6a89cc;
+    border:none;
+}
+
+.channels a:last-child{
+    margin-right:0;
+}
+
+.channels a:hover{
+    text-decoration:underline
+}
+
+.cc p{
+    font-family:sans-serif;
+    line-height: 10px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.cc img{
+    width: 120px;
+}
+
+/*Logo*/
+
+.c1{
+    width: 140px;
+    height: 140px;
+    border: 3px solid white;
+    border-radius: 50%;
+    overflow: hidden;
+    margin:auto;
+}
+
+.c1 img{
+    width: 100%;
+}
+
+/*Scroolbar*/
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-color: #6a89cc;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: #b8e994;
+}
+
+/*Past paper*/
+
+.pp h1{
+    text-decoration: underline;
+    line-height: 4px;
+}
+
+.pp h2{
+    text-decoration: underline;
+}
+
+.pp p{
+    max-width: 325px;
+    text-align: center;
+    margin: auto;
+    display: flex;
+}
+
+/*404*/
+
+.container{
+    width:100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+    margin:auto;
+    font-family:"montserrat";
+}
+
+.container h1{
+    font-size: 160px;
+    margin:0;
+    font-weight: 900;
+    letter-spacing: 4px;
+    background: #fff;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.container a{
+    text-decoration:none;
+    background: #e55039;
+    color:#fff;
+    padding: 12px 24px;
+    display: inline-block;
+    border-radius: 25px;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+.container a:hover{
+    background: #e55039e5;
+}
